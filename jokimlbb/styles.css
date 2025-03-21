@@ -1,0 +1,72 @@
+body {
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+}
+
+.joki-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.joki-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px; /* Kolom dalam rasio 16:9 */
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Gambar berbentuk bulat dengan border emas (gold) */
+.content-container img {
+    width: 150px; /* Atur ukuran gambar */
+    height: 150px;
+    border-radius: 50%; /* Membuat gambar bulat */
+    border: 5px solid gold; /* Border warna emas */
+}
+
+.joki-details {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.status-btn {
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: default; /* Tidak bisa diklik */
+}
+
+.status-btn.ready {
+    background-color: green;
+}
+
+.status-btn.not-ready {
+    background-color: red;
+}
