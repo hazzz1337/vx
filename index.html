@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="VxTroubleMaker - Platform Games & Joki">
+<meta property="og:description" content="VxTroubleMaker adalah destinasi utama untuk peminat, menawarkan pelbagai produk gaming berkualiti tinggi">
+<meta property="og:image" content="https://e.top4top.io/p_3367mkspi0.png">
+<meta property="og:url" content="https://info.VxTroubleMaker.me">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SlrmyApi - Platform API & Tools">
+<meta name="twitter:description" content="VxTroubleMaker adalah destinasi utama untuk peminat, menawarkan pelbagai produk gaming berkualiti tinggi">
+<meta name="twitter:image" content="https://slrmyshop.com.my/fileapi/tourlapi_1740992742_20250303_170454.png">	
+    <title>VxTroubleMaker - Platform Games & Joki</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Global Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+            scroll-behavior: smooth;
+        }
+           body {
+    background-color: white;
+    color: black;
+    padding-top: 100px;
+    max-width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pastikan semua content di tengah */
+    justify-content: center;
+    margin: 0 auto; /* Letak body di tengah */
+}
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 10px 20px;
+            display: f;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #000;           
+        }
+        /* Styling untuk logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Logo & teks sebelah kiri */
+    gap: 10px; /* Jarak antara logo & teks */
+}
+
+/* Styling untuk logo */
+.logo-container img {
+    width: 60px; /* Saiz logo */
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    object-fit: cover; /* Pastikan gambar tak terdistorsi */
+}
+
+/* Styling untuk teks di sebelah logo (jika ada) */
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Responsive: Logo kecil sikit di skrin kecil */
+@media (max-width: 768px) {
+    .logo-container img {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #000;
+    }
+    .logo-text {
+        font-size: 16px;
+        color: #000;
+    }
+}
+
+        /* Sidebar Kanan */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .nav-menu.active {
+            right: 0;
+        }
+        .nav-menu li {
+            list-style: none;
+            margin: 15px 0;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .nav-menu a:hover {
+            color: white;
+        }
+
+       /* Butang Toggle () - Segi Empat Sama */
+.menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px; /* Saiz ikon lebih jelas */
+    font-weight: bold;
+    width: 40px; /* Lebar sama */
+    height: 40px; /* Tinggi sama */
+    color: #000;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 1100;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Hover Efek */
+.menu-toggle:hover {
+    background: #000;
+    border-color: white;
+    transform: scale(1.05);
+}
+
+/* Butang Tutup () - Sama Seperti Menu */
+.close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    background: #000;
+}
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 900;
+        }
+        .overlay.active {
+            display: block;
+        }         
+
+/* Social Media Buttons */
+               .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;          
+        }
+        
+        .social-buttons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 50%;
+            background: black;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            border: 2px solid #000;
+            transition: 0.3s;
+        }
+        .social-buttons a:hover {
+            transform: scale(1.1);
+            background: red;
+            color: #000;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            padding: 10px 0;
+            font-size: 12px;
+            text-align: center;
+            align-items: center;
+            color: #000;
+            background-color: white;
+            border-top: 2px solid black;
+        }            
+
+.content {
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-size: 0.7em;
+    width: 90%;
+    max-width: 600px; /* Hadkan supaya tak terlalu lebar */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pastikan teks & elemen dalam content berada di tengah */
+    justify-content: center;
+    margin: 0 auto; /* Letakkan di tengah */
+}
+              
+    </style>
+</head>
+<body>
+
+<!-- Butang Menu -->
+	<header class="header">
+    <div class="logo-container">
+        <img src="https://c.top4top.io/p_3367ysliu0.png" alt="slrmyapi.org">
+        <span class="logo-text">VXTROUBLEMAKER</span>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- Sidebar -->
+<div class="nav-menu">
+    <li><a href="https://vx.meorgamingstore.me/">Home</a></li>
+    <li><a href="https://vx.meorgamingstore.me/services">Services</a></li>
+    <li><a href="https://vx.meorgamingstore.me/mlbbjoki">MLBB Joki Registered</a></li>
+    <li><a href="https://vx.meorgamingstore.me/aboutus">About Us</a></li>
+    <li><a href="https://vx.meorgamingstore.me/tools">Tools</a></li>
+    <li><a href="https://docs.vx.meorgamingstore.me/"></a></li>
+    <li><button class="close-btn" onclick="toggleMenu()">✖</button></li>
+</div>
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>     
+
+
+    <!-- Content -->
+    <div class="content">  	
+        VxTroubleMaker - One Stop Center!
+<br>
+VxTroubleMaker is your one-stop center for all your Mobile Legends needs! We offer ML account sales, ML tournament room hosting, affordable ML diamond top-ups, and ML account boosting services to help you rank up quickly. Additionally, we provide virtual number services for various applications. With VxTroubleMaker, your gaming experience becomes easier, faster, and more exciting!
+
+<br><br>
+What is MLBB?
+<br>
+Mobile Legends: Bang Bang (MLBB) is a popular Multiplayer Online Battle Arena (MOBA) game for mobile devices. Developed by Moonton, MLBB features 5v5 battles where players must work together as a team to defeat opponents and destroy the enemy base. With a wide variety of unique heroes, deep strategic gameplay, and stunning graphics, MLBB has become one of the most beloved games among gamers worldwide.
+<br>
+For example, Mobile Legends: Bang Bang (MLBB) is a highly popular MOBA game where two teams battle in 5v5 matches to destroy the enemy base. With a variety of heroes, each possessing unique skills, MLBB requires strategy, teamwork, and quick reflexes to achieve victory.
+<br><br>
+Who is the creator of VxTroubleMaker?
+<br>
+VxTroubleMaker was founded by Hazz & Shen, a team experienced in information technology, web development, and automation systems. With expertise in developing various applications and understanding the needs of modern users, VxTroubleMaker was created to provide easy API solutions, sell accounts and MLBB-related services, all in a fast and user-friendly manner.
+<br><br>
+Main Vision of VxTroubleMaker, to become a leading platform in providing gaming services, including account sales, top-ups, boosting services, and innovative API solutions. VxTroubleMaker strives to deliver the best experience to customers with a fast, secure, and user-friendly system while supporting the gaming community to grow and advance further.
+<br><br>
+Why VxTroubleMaker established?
+<br>
+VxTroubleMaker was developed as a comprehensive platform offering various gaming-related services, particularly for Mobile Legends: Bang Bang (MLBB). With expertise in information technology, web development, and automation systems, VxTroubleMaker aims to simplify the process for players to acquire game accounts, top up diamonds, access boosting services to increase their rank, and provide innovative and user-friendly API solutions. Additionally, this platform is designed with a fast and secure system to ensure smooth transactions and deliver the best experience to customers. VxTroubleMaker is committed to supporting the gaming community by offering high-quality, competitive services that meet the needs of modern players in the rapidly growing digital gaming industry.
+<br>
+Furthermore, VxTroubleMaker was developed to meet the high demand in the gaming industry, especially for Mobile Legends: Bang Bang (MLBB) players who require fast and high-quality services. With an efficient system and advanced automation, VxTroubleMaker offers various services such as account sales, diamond top-ups, boosting services, and API solutions designed to simplify the user experience. The commitment to security, efficiency, and customer satisfaction makes VxTroubleMaker the top choice for the gaming community seeking the best services in the digital gaming world.
+<br><br>
+Commitment of VxTroubleMaker
+<br>
+• Security & Trust – Providing a secure and reliable platform for every customer transaction.
+<br>
+• Service Quality – Delivering high-quality services with a stable and user-friendly system.
+<br>
+• Continuous Innovation – Constantly developing technology and automation<br>systems for a better user experience.
+<br>
+• Affordable Pricing – Offering competitive prices with various package options<br>suitable for all customers.
+<br>
+• Customer Support – Providing responsive customer support to<br>assist with any issues or inquiries.
+<br>
+• Gaming Community – Supporting and building a more active and growing gaming community through various MLBB-related services.
+<br>
+• Sincerity & Integrity – Practicing honest and professional business operations in every transaction and interaction with customers.
+<br><br>
+With the rapid growth of technology, VxTroubleMaker will continue to expand as the premier destination for gaming enthusiasts, offering high-quality products, top-notch services, and the latest innovations to meet customer needs. With a commitment to customer satisfaction and a diverse range of products, VxTroubleMaker is determined to become a leader in the gaming industry, ensuring that every gamer enjoys the best experience.
+<br>
+    </div>
+
+
+<!-- Social Media -->
+    <div class="social-buttons">
+        <a href="https://facebook.com/slrmyshopofficial"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/slrmyshopofficial"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/601136871190"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://t.me/feedbackslrmyshop"><i class="fa-brands fa-telegram"></i></a>        
+    <a href="https://www.npmjs.com/~slrmyapiofc"><i class="fa-brands fa-npm"></i></a>
+    <a href="https://github.com/slrmyshopofficial/slrmyapiofc"><i class="fa-brands fa-github"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+     &copy; <span id="year"></span> All Right Reserved | VxTroubleMaker
+    </div>    
+    
+        <!-- Menu Toggle Script -->
+   	
+<script>
+        function toggleMenu() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+            document.querySelector(".overlay").classList.toggle("active");
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+                
+    </script>
+
+</body>
+</html>
