@@ -1,0 +1,52 @@
+body {
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+}
+
+.account-details {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.account-details img {
+    width: 400px;  /* Ukuran lebih kecil */
+    height: auto; /* Menjaga aspek rasio asli */
+    display: block;
+    margin: 10px auto; /* Pusatkan gambar */
+    object-fit: contain; /* Pastikan gambar tidak terpotong */
+}
+
+.account-details button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.account-details button:hover {
+    background-color: #218838;
+}
+
+button:last-child {
+    background-color: #dc3545;
+}
+
+button:last-child:hover {
+    background-color: #c82333;
+}
